@@ -1,10 +1,11 @@
-- name: handlers task 1
+- name: Install nginx
   apt:
-    name: nginx
-    notify: my_handler
+    name: "{{ package_name }}"
+    state: present
 
-- name: handlers task 2
-  template: 
-    src: index.html.j2
+- name: Copy template file
+  template:
+    src: "{{ template_name }}"
     dest: /var/www/html/index.html
+  notify: restart nginx
 

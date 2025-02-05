@@ -1,1 +1,4 @@
-name: Mariam Samir 
+username: Mariam Samir 
+package_name: "nginx"
+template_name: "index.html.j2"
+
